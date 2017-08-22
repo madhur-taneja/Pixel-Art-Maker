@@ -4,6 +4,7 @@
 // When size is submitted by the user, call makeGrid()
 
 var table = $('#pixel_canvas');
+var form = $('#sizePicker');
 var columns;
 var rows;
 
@@ -22,6 +23,13 @@ function makeGrid(rows, columns) {
 	table.html(grid);
 
 }
+
+form.submit(function() {
+	event.preventDefault();
+	rows = $('#input_height').val();
+	columns = $('#input_width').val();
+	makeGrid(rows, columns);
+});
 
 // Build a default 10x10 grid.
 makeGrid(10,10);
