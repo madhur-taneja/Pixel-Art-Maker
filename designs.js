@@ -31,5 +31,13 @@ form.submit(function() {
 	makeGrid(rows, columns);
 });
 
+// Sets the color to default (i.e. Black)
+var selectedColor = $('#colorPicker').val(); 
+// Updates the color to selected color by the user.
+$('#colorPicker').on('input', function() {
+	console.log(1);
+	selectedColor = $('#colorPicker').val();
+});
+
 // Build a default 10x10 grid.
 makeGrid(10,10);
