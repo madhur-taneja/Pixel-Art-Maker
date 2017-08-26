@@ -21,7 +21,7 @@ function makeGrid(rows, columns) {
 	}
   
 	table.html(grid);
-
+	addClickListeners();
 }
 
 form.submit(function() {
