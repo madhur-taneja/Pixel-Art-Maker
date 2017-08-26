@@ -39,5 +39,15 @@ $('#colorPicker').on('input', function() {
 	selectedColor = $('#colorPicker').val();
 });
 
+function addClickListeners() {
+	var cells = $('.cell');
+	for (var i = 0; i < cells.length; i++) {
+		cells[i].addEventListener("click", function(event) {
+		var clickedCell = event.target;
+		$(clickedCell).css('background-color', selectedColor);
+		});
+	}
+}
+
 // Build a default 10x10 grid.
 makeGrid(10,10);
