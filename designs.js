@@ -49,5 +49,13 @@ function addClickListeners() {
 	}
 }
 
+$('#add_column').click(function(){
+	//console.log(columns);
+    columns = Number(columns) + 1;
+	//console.log(columns);
+	grid = ' ';
+    makeGrid(rows, columns);
+});
+
 // Build a default 10x10 grid.
 makeGrid(10,10);
