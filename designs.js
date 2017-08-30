@@ -5,8 +5,8 @@
 
 var table = $('#pixel_canvas');
 var form = $('#sizePicker');
-var columns;
-var rows;
+var columns = 1;
+var rows = 1;
 
 function makeGrid(rows, columns) {
 	
@@ -58,4 +58,4 @@ $('#add_column').click(function(){
 });
 
 // Build a default 10x10 grid.
-makeGrid(10,10);
+makeGrid(1,1);
