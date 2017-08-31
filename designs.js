@@ -49,10 +49,14 @@ function addClickListeners() {
 	}
 }
 
+$('#add_row').click(function(){
+    rows = Number(rows) + 1;
+	grid = ' ';
+    makeGrid(rows, columns);
+});
+
 $('#add_column').click(function(){
-	//console.log(columns);
     columns = Number(columns) + 1;
-	//console.log(columns);
 	grid = ' ';
     makeGrid(rows, columns);
 });
