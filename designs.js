@@ -61,5 +61,13 @@ $('#add_column').click(function(){
     makeGrid(rows, columns);
 });
 
+$('#remove_row').click(function(){
+	if(rows > 1)
+		rows = Number(rows) - 1;
+	console.log(rows);
+	grid = ' ';
+    makeGrid(rows, columns);
+});
+
 // Build a default 10x10 grid.
 makeGrid(1,1);
