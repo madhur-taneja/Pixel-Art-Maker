@@ -64,7 +64,13 @@ $('#add_column').click(function(){
 $('#remove_row').click(function(){
 	if(rows > 1)
 		rows = Number(rows) - 1;
-	console.log(rows);
+	grid = ' ';
+    makeGrid(rows, columns);
+});
+
+$('#remove_column').click(function(){
+	if(columns > 1)
+		columns = Number(columns) - 1;
 	grid = ' ';
     makeGrid(rows, columns);
 });
