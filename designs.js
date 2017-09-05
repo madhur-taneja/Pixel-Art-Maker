@@ -75,5 +75,12 @@ $('#remove_column').click(function(){
     makeGrid(rows, columns);
 });
 
+$('#reset').click(function(){
+	grid = ' ';
+	rows = 1;
+	columns = 1;
+    makeGrid(rows, columns);
+});
+
 // Build a default 10x10 grid.
 makeGrid(1,1);
