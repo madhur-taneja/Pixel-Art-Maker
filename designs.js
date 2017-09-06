@@ -3,18 +3,20 @@
 
 // When size is submitted by the user, call makeGrid()
 
-var table = $('#pixel_canvas');
-var form = $('#sizePicker');
-var columns = 1;
-var rows = 1;
+// Global Variables
+const form = $('#sizePicker');
+let columns = 1;
+let rows = 1;
 
+// Function to make the Grid
 function makeGrid(rows, columns) {
 	
 // Your code goes here!
-	var grid = '';
-	for (var i = 0; i < rows; i++) {
+	const table = $('#pixel_canvas');
+	let grid = '';
+	for (let i = 0; i < rows; i++) {
 		grid += `<tr>`;
-		for (var j = 0; j < columns; j++) {
+		for (let j = 0; j < columns; j++) {
 			grid += `<td class="cell">&nbsp;</td>`;
 		}
 			grid += `</tr>`;
@@ -24,43 +26,52 @@ function makeGrid(rows, columns) {
 	addClickListeners();
 }
 
+// Event listener for submission of form
 form.submit(function() {
+	// Preventing Default value
 	event.preventDefault();
+	// Fetching the user's input
 	rows = $('#input_height').val();
 	columns = $('#input_width').val();
+	// Calling the function to make the grid
 	makeGrid(rows, columns);
 });
 
 // Sets the color to default (i.e. Black)
-var selectedColor = $('#colorPicker').val(); 
-// Updates the color to selected color by the user.
+let selectedColor = $('#colorPicker').val(); 
+// Updates the color to the selected color by the user.
 $('#colorPicker').on('input', function() {
-	console.log(1);
+	// Fetching the user's input
 	selectedColor = $('#colorPicker').val();
 });
 
+// Adding event listeners to the cells of the grid
 function addClickListeners() {
-	var cells = $('.cell');
-	for (var i = 0; i < cells.length; i++) {
+	const cells = $('.cell');
+	for (let i = 0; i < cells.length; i++) {
 		cells[i].addEventListener("click", function(event) {
 		var clickedCell = event.target;
+		// Changing the color of the selected cell
 		$(clickedCell).css('background-color', selectedColor);
 		});
 	}
 }
 
+// Function to add a new row on button click
 $('#add_row').click(function(){
     rows = Number(rows) + 1;
 	grid = ' ';
     makeGrid(rows, columns);
 });
 
+// Function to add a new column on button click
 $('#add_column').click(function(){
     columns = Number(columns) + 1;
 	grid = ' ';
     makeGrid(rows, columns);
 });
 
+// Function to remove a row on button click
 $('#remove_row').click(function(){
 	if(rows > 1)
 		rows = Number(rows) - 1;
@@ -68,6 +79,7 @@ $('#remove_row').click(function(){
     makeGrid(rows, columns);
 });
 
+// Function to remove a column on button click
 $('#remove_column').click(function(){
 	if(columns > 1)
 		columns = Number(columns) - 1;
@@ -75,6 +87,7 @@ $('#remove_column').click(function(){
     makeGrid(rows, columns);
 });
 
+// Function to reset the grid
 $('#reset').click(function(){
 	grid = ' ';
 	rows = 1;
