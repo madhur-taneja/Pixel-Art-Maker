@@ -58,10 +58,25 @@ function addClickListeners() {
 }
 
 // Function to add a new row on button click
+
+// This method will clear the old table and make a new one with an extra row everytime.
+// $('#add_row').click(function(){
+    // rows = Number(rows) + 1;
+	// grid = ' ';
+    // makeGrid(rows, columns);
+// });
+
+// This method won't clear the old table and just add another row at the end of the table.
 $('#add_row').click(function(){
-    rows = Number(rows) + 1;
-	grid = ' ';
-    makeGrid(rows, columns);
+	var new_row = '';
+	new_row += `<tr>`;
+	for (let j = 0; j < columns; j++) {
+		new_row += `<td class="cell">&nbsp;</td>`;
+	}
+	new_row += `</tr>`;
+	table.append(new_row);
+	rows = Number(rows) + 1;
+	addClickListeners();
 });
 
 // Function to add a new column on button click
