@@ -80,10 +80,21 @@ $('#add_row').click(function(){
 });
 
 // Function to add a new column on button click
+
+// This method will clear the old table and make a new one with an extra column everytime.
+// $('#add_column').click(function(){
+    // columns = Number(columns) + 1;
+	// grid = ' ';
+    // makeGrid(rows, columns);
+// });
+
+// This method won't clear the old table and just add another column at the end of each row.
 $('#add_column').click(function(){
-    columns = Number(columns) + 1;
-	grid = ' ';
-    makeGrid(rows, columns);
+	$('tr').each(function() {
+		$(this).append(`<td class="cell">&nbsp;</td>`)
+	});
+	columns = Number(columns) + 1;
+	addClickListeners();
 });
 
 // Function to remove a row on button click
