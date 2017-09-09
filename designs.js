@@ -98,11 +98,20 @@ $('#add_column').click(function(){
 });
 
 // Function to remove a row on button click
+
+// This method will clear the old table and make a new one with a less row everytime.
+// $('#remove_row').click(function(){
+	// if(rows > 1)
+		// rows = Number(rows) - 1;
+	// grid = ' ';
+    // makeGrid(rows, columns);
+// });
+
+// This method won't clear the old table and just remove the last row.
 $('#remove_row').click(function(){
-	if(rows > 1)
-		rows = Number(rows) - 1;
-	grid = ' ';
-    makeGrid(rows, columns);
+	$('tr:last').remove();
+	rows = Number(rows) - 1;
+	addClickListeners();
 });
 
 // Function to remove a column on button click
