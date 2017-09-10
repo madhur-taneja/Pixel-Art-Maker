@@ -115,11 +115,23 @@ $('#remove_row').click(function(){
 });
 
 // Function to remove a column on button click
+
+// This method will clear the old table and make a new one with a less column everytime.
+// $('#remove_column').click(function(){
+	// if(columns > 1)
+		// columns = Number(columns) - 1;
+	// grid = ' ';
+    // makeGrid(rows, columns);
+// });
+
+// This method won't clear the old table and just remove the last column.
 $('#remove_column').click(function(){
-	if(columns > 1)
-		columns = Number(columns) - 1;
-	grid = ' ';
-    makeGrid(rows, columns);
+	$('tr').each(function() {
+		//console.log($('td'));
+		$(this).find(':last-child').remove();
+	});
+	columns = Number(columns) - 1;
+	addClickListeners();
 });
 
 // Function to reset the grid
