@@ -1,16 +1,27 @@
 # Pixel Art Maker Project
 
-## Table of Contents
+* Open and view the Project using the `.zip` file provided or at my [Github Repository](https://github.com/madhur-taneja/Pixel-Art-Maker).
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+## Getting Started
 
-## Instructions
+* Your primary task is to implement the makeGrid() function, that dynamically creates a grid that the user can interact with.
 
-To get started, open `designs.js` and start building out the app's functionality.
+## Tools required:
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+* [jQuery](https://code.jquery.com/jquery-3.2.1.min.js) (Javascript Library) for easier coding of javascript.
+* [JS Beautifier](http://www.freeformatter.com/javascript-beautifier.html) to Beautify JS.
+* [Online Markdown Editor](http://dillinger.io/) to test `README.md`.
 
-## Contributing
+## Steps to run the app:
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+> Open the project through the `.zip` file provided and extract file.
+> To open `Index.html`:
+* Open the main folder.
+* Open `Index.html`.
+
+## Features:
+
+* Input value of rows and columns and press submit.
+* Add or Remove Rows and Columns with specialized buttons.
+* Add colors to cells of the grid.
+* Reset the Grid
