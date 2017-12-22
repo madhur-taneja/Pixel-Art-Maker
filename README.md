@@ -1,6 +1,7 @@
 # Pixel Art Maker Project
 
 * Open and view the Project using the `.zip` file provided or at my [Github Repository](https://github.com/madhur-taneja/Pixel-Art-Maker).
+* The project is also hosted locally on [Github](https://madhur-taneja.github.io/Pixel-Art-Maker/).
 
 ## Getting Started
 
