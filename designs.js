@@ -1,18 +1,13 @@
-// Select color input
-// Select size input
-
-// When size is submitted by the user, call makeGrid()
-
 // Global Variables
 const form = $('#sizePicker');
-let columns = 1;
-let rows = 1;
+const table = $('#pixel_canvas');
+let columns = 10;
+let rows = 10;
 
 // Function to make the Grid
 function makeGrid(rows, columns) {
 	
 // Your code goes here!
-	const table = $('#pixel_canvas');
 	let grid = '';
 	for (let i = 0; i < rows; i++) {
 		grid += `<tr>`;
@@ -30,10 +25,10 @@ function makeGrid(rows, columns) {
 form.submit(function() {
 	// Preventing Default value
 	event.preventDefault();
-	// Fetching the user's input
+	// Fetching the user's size input
 	rows = $('#input_height').val();
 	columns = $('#input_width').val();
-	// Calling the function to make the grid
+	// When size is submitted by the user, call makeGrid()
 	makeGrid(rows, columns);
 });
 
@@ -143,4 +138,4 @@ $('#reset').click(function(){
 });
 
 // Build a default 10x10 grid.
-makeGrid(1,1);
+makeGrid(10,10);
